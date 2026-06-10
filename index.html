@@ -161,20 +161,31 @@ async function predict() {
         }
     });
 
-    const percent = (best.probability * 100).toFixed(1);
 
     document.getElementById("resultName").innerText =
         best.className;
 
+    const percent = best.probability * 100;
+
+if (percent < 60) {
+    document.getElementById("resultName").innerText =
+        "Đang nhận diện...";
+
     document.getElementById("confidence").innerText =
-        "Độ chính xác: " + percent + "%";
-    console.log(best.className);
-    if(best.className === "Nhựa"){
+        "Vui lòng đưa vật thể vào camera";
+
+    document.getElementById("guide").innerHTML =
+        "♻️ Hãy đưa giấy hoặc nhựa vào khung hình";
+
+    return;
+}    
+console.log(best.className, percent);
+    if(best.className.trim() === "Nhựa"){
 
         document.getElementById("guide").innerHTML =
             "🧴 Có thể tái chế<br>➡️ Bỏ vào thùng rác nhựa";
 
-    }else if(best.className === "Giấy"){
+    }else if(best.className.trim() === "Giấy"){
 
         document.getElementById("guide").innerHTML =
             "📄 Có thể tái chế<br>➡️ Bỏ vào thùng rác giấy";
