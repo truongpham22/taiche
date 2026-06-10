@@ -168,7 +168,7 @@ async function predict() {
 
     document.getElementById("confidence").innerText =
         "Độ chính xác: " + percent + "%";
-
+    console.log(best.className);
     if(best.className === "Nhựa"){
 
         document.getElementById("guide").innerHTML =
