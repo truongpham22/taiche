@@ -110,17 +110,13 @@ body{
         Chưa nhận diện
     </div>
 
-    <div id="confidence" class="confidence">
-        Độ chính xác: --
-    </div>
-
     <div id="guide" class="guide">
         Hướng dẫn phân loại sẽ hiển thị ở đây
     </div>
 </div>
 
 <script>
-const URL = "https://teachablemachine.withgoogle.com/models/DkYo_w50-/";
+const URL = "https://teachablemachine.withgoogle.com/models/DkYo_w50-/"; // model AI đã được train
 
 let model, webcam;
 
@@ -184,7 +180,7 @@ console.log(best.className, percent);
 
         document.getElementById("guide").innerHTML =
             "🧴 Có thể tái chế<br>➡️ Bỏ vào thùng rác nhựa";
-
+   
     }else if(best.className.trim() === "Giấy"){
 
         document.getElementById("guide").innerHTML =
