@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -170,12 +169,12 @@ async function predict() {
     document.getElementById("confidence").innerText =
         "Độ chính xác: " + percent + "%";
 
-    if(best.className === "Plastic"){
+    if(best.className === "Nhựa"){
 
         document.getElementById("guide").innerHTML =
             "🧴 Có thể tái chế<br>➡️ Bỏ vào thùng rác nhựa";
 
-    }else if(best.className === "Paper"){
+    }else if(best.className === "Giấy"){
 
         document.getElementById("guide").innerHTML =
             "📄 Có thể tái chế<br>➡️ Bỏ vào thùng rác giấy";
@@ -185,4 +184,3 @@ async function predict() {
 
 </body>
 </html>
-```
